@@ -1,0 +1,14 @@
+Aplicativo para gestão de notas de alunos;
+1) Defina um projeto para você!
+a) Barbearia
+
+b) Agendamento de horário
+
+Nome do aplicativo: No seu tempo
+
+Resumo: um aplicativo para agendamento de horário em barbearias, os usuários poderão entrar no aplicativo ver
+o horaio que mais o agrada e agendar caso o barbeiro tenha a disponibilidade do horario, o usuario tambem
+poderá opitar em receber notificação previamente para não esquecer de seu horaio marcado.
+O barbeiro pode ter o controle de seus horaios, podendo alem de identificar brechas em que não terá cliente ou dias da
+semana em que os clientes mais buscam horario.
+
