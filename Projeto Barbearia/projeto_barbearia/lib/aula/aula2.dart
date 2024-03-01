@@ -4,9 +4,9 @@ void main() {
   print('aula funções');
 
   print('Nome: ');
-  var nome = stdin.readLineSync();
+  String? nome = stdin.readLineSync()?.toUpperCase();
   print('Idade: ');
-  var entradaIdade = stdin.readLineSync()!;
+  String entradaIdade = stdin.readLineSync()??'0';
   var idade = entradaIdade as int;
 
   print('meu nome é $nome, a minha idade é $idade');
