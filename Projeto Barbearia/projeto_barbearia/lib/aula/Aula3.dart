@@ -4,8 +4,11 @@ main() {
 
   print(
       'O aluno foi ${ehAprovado(nota1: 10, nota2: 6, faltas: 5, calcularMedia: calcularMediaPercentual)}');
-    print(
+  print(
       'O aluno foi ${ehAprovado(nota1: 10, nota2: 6, faltas: 5, calcularMedia: calcularMedia)}');
+  print(
+      'O aluno foi ${ehAprovado(nota1: 10, nota2: 6, calcularMedia: (double n1, double n2) => (n1 + n2) / 2, 
+      faltas: 5)}');
 }
 
 void funcao(int x, String y) {
@@ -40,8 +43,6 @@ double calcularMedia(double nota1, double nota2) {
   return media;
 }
 
-
-
 void funcaoParamNomeado({required int idade, required String nome}) {
   print('nome: $nome, idade: $idade');
 }
@@ -64,3 +65,12 @@ int sintaxeParamFuncao(int x, int y, Function(int, int) f) {
 
   return f(x, y);
 }
+
+/*
+- atividade 04
+
+funções anônimas
+sintaxe; exemplo contextualizado; execução;
+quando usar ";" e ","
+*/
+
