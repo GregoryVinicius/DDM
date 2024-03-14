@@ -10,3 +10,23 @@ bool verificarIdade(int idade, bool temResponsavel) {
   }
 }
 
+bool verificarHorario(DateTime horario){
+  
+  if(Horario.getDisponivel == true){
+    return true
+  }else{
+    return false
+}
+
+void marcarHorario(Datetime horario){
+  Horario.setHorario = horario;
+  Horario.setDisponivel = false
+}
+  
+void marcarHorario(Pessoa pessoa, DateTime horario){
+  var verificado = verificarHorario(horario);
+  if(verificado == true){
+    marcarHorario(horario);
+  }
+}
+
