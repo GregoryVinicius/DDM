@@ -1,6 +1,7 @@
 class Pessoa {
   var nome = '';
   var cpf = '';
-  int idade = 0;
-  
+  int _idade = 0;
+
+   
 }
