@@ -1,13 +1,56 @@
 import 'dart:ffi';
+import 'dart:isolate';
 
 import 'minha_classe.dart';
 
 void main(List<String> args) {
-  MinhaClasse mc = new MinhaClasse(x: 1, y: 10);
+  var estado = Estado(id: 1, nome: 'Paraná', sigla: 'PR');
 
-  var mc2 = MinhaClasse(x: 2, y: 20);
+  var cidade = Cidade(id: 1, nome: 'Paranavaí', estado: estado);
 
-  MinhaClasse(x: 3, y: 30);
+  var cidade2 = Cidade(
+      id: 2,
+      nome: 'Maringa',
+      estado: Estado(id: 2, nome: 'Mato Grosso', sigla: 'MG'));
+
+  var venda = Venda(
+    id: 1, 
+    cliente: Cliente(
+      id: 3, 
+      nome: 'Maria', 
+      cidadeMoradia: Cidade(
+        id: 3, 
+        nome: 'Maringa', 
+        estado: Estado(
+          id: 1, 
+          nome: 'Paraná', 
+          sigla: 'PR')),
+      cidadeTrabalha: Cidade(
+        id: 5, 
+        nome: 'Pindamonhangaba', 
+        estado: Estado(
+          id: 5, 
+          nome: 'Alguma ai', 
+          sigla: 'AA'))),
+    fornecedor: Fornecedor(
+      id: 1, 
+      nome: 'Cleiton', 
+      cidadeTrabalha: Cidade(
+        id: 4, 
+        nome: 'São Paulo', 
+        estado: Estado(
+          id: 3, 
+          nome: 'São Paulo', 
+          sigla: 'SP')), 
+        cidadeMora: Cidade(
+          id: 4, 
+          nome: 'Jundiai', 
+          estado: Estado(
+            id: 3, 
+            nome: 'São Paulo', 
+            sigla: 'SP'))), 
+    calculoComissao: ()=> 1000 * (5 / 100));
+
 }
 
 // Criar as seguintes classes:
@@ -66,11 +109,7 @@ class Venda {
   int id;
   Cliente cliente;
   Fornecedor fornecedor;
+  Function calculoComissao;
 
-  Venda({required this.id, required this.cliente, required this.fornecedor});
-
-  double comissao({required double valor, required double porcentagem}) {
-    var comissao = valor * (porcentagem / 100);
-    return comissao;
-  }
+  Venda({required this.id, required this.cliente, required this.fornecedor, required this.calculoComissao});
 }

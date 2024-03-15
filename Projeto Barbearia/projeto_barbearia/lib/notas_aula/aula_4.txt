@@ -1,6 +1,7 @@
 Diário de Aula
 - Classes e objetos: 
 	- sintaxe (adaptação, recomendado, com e sem referência);
+    
 	- construtor (conceitos básicos; método/função?; parâmetros posicionais, valor padrão, nomeados, nomeados obrigatórios); 
 	- atributos: sintaxe; uso do this; modificador de acesso; getters/setters - recomendação;
 	- métodos: sintaxe; parâmetros;
