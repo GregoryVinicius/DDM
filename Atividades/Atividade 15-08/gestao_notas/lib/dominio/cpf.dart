@@ -1,22 +1,16 @@
 class CPF {
   late List<int> numerosCPF;
   CPF(String cpf) {
-    // cpf = cpf.replaceAll('.', '');
-    // cpf = cpf.replaceAll('-', '');
-    if (cpf == '') throw Exception('CPF não pode ser vazio!');
-    cpf = cpf.replaceAll(
-        RegExp(r'\d'), ''); // esta linha faz o mesmo que a 3 e 4.
-    List<String> temp = cpf.split('');
-    // numerosCPF = <int>[];
-    // for (var e in temp) {
-    //   int numero = int.parse(e);
-    //   numerosCPF.add(numero);
-    // } // da linha 10 a 14 faz a mesma coisa da linha 16.
+    eVazio(cpf);
+    cpf = cpf.replaceAll(RegExp(r'\d'), '');
+    numerosCPF = cpf.split('').map(int.parse).toList(); // 'map' igual ao 'for' porem gera um novo array
+    eOnzeNumeros();
+    eNumeroDiferentes();
+    // eDigitoCorreto(); //Adicionar Função
+  }
 
-    numerosCPF = cpf
-        .split('')
-        .map(int.parse)
-        .toList(); // 'map' igual ao 'for' porem gera um novo array
+  eVazio(String cpf){
+    if (cpf == '') throw Exception('CPF não pode ser vazio!');
   }
 
   bool eOnzeNumeros() {
