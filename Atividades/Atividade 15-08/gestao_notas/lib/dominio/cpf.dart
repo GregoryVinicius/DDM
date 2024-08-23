@@ -3,13 +3,16 @@ class CPF {
   CPF(String cpf) {
     eVazio(cpf);
     cpf = cpf.replaceAll(RegExp(r'\d'), '');
-    numerosCPF = cpf.split('').map(int.parse).toList(); // 'map' igual ao 'for' porem gera um novo array
+    numerosCPF = cpf
+        .split('')
+        .map(int.parse)
+        .toList(); // 'map' igual ao 'for' porem gera um novo array
     eOnzeNumeros();
     eNumeroDiferentes();
     // eDigitoCorreto(); //Adicionar Função
   }
 
-  eVazio(String cpf){
+  eVazio(String cpf) {
     if (cpf == '') throw Exception('CPF não pode ser vazio!');
   }
 
@@ -25,20 +28,6 @@ class CPF {
     throw Exception("CPF não pode ter todos os numeros iguais");
   }
 
-  // bool calcularDigito() {
-  //   late var total;
-  //   late var total2;
-  //   for (var i = 0; i < 9; i++) {
-  //     for (var j = 0; j < 10; i++) {
-  //       total += numerosCPF[i] * j + 1;
-  //     }
-  //     total2 = (total - numerosCPF[0]) + numerosCPF[9];
-  //   }
-  //   total = total % numerosCPF[10];
-  //   if (numerosCPF[10] != total) throw Exception('O CPF esta incorreto');
-  //   return false;
-  // }
-
   int calcularDigito(int indice) {
     var soma = 0;
     for (var peso = 9; peso > -1; peso--, indice--) {
@@ -48,6 +37,12 @@ class CPF {
     if (digito == 10) digito = 0;
     return digito;
   }
+
+  // eDigitoCorreto(String cpf) {
+  //   primeroDigito(cpf);
+  //   segundoDigito(cpf);
+  //   eUnico(cpf);
+  // }
 
   // bool eUnico() {
 
